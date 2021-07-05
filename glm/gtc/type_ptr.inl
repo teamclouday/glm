@@ -284,13 +284,24 @@ namespace glm
 		return &(mat[0].x);
 	}
     
+	//! Return the address to the data of the input parameter.
+	/// @see gtc_type_ptr
+	template<typename T>
+	GLM_FUNC_QUALIFIER T * value_ptr
+	(
+        	detail::tquat<T> & q
+    	)
+	{
+		return &(q[0]);
+	}
+	
 	//! Return the constant address to the data of the input parameter.
 	/// @see gtc_type_ptr
 	template<typename T>
 	GLM_FUNC_QUALIFIER T const * value_ptr
 	(
-        detail::tquat<T> const & q
-    )
+        	detail::tquat<T> const & q
+    	)
 	{
 		return &(q[0]);
 	}
