@@ -30,6 +30,10 @@
 /// Industrial Light & Magic, a division of Lucas Digital Ltd. LLC
 ///////////////////////////////////////////////////////////////////////////////////
 
+#if __cplusplus > 199711L
+#define register      // Deprecated in C++11.
+#endif  // #if __cplusplus > 199711L
+
 #include "_detail.hpp"
 
 namespace glm{
@@ -40,8 +44,8 @@ namespace detail
 		volatile float f = 1e10;
 
 		for(int i = 0; i < 10; ++i)	
-			f *= f;             // this will overflow before
-								// the for­loop terminates
+			f = f * f;             // this will overflow before
+								// the forï¿½loop terminates
 		return f;
 	}
 
