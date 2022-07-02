@@ -234,6 +234,15 @@ namespace glm
 		return glm::degrees(asin(valType(-2) * (q.x * q.z - q.w * q.y)));
 	}
 
+	template <typename T> 
+	GLM_FUNC_QUALIFIER detail::tvec3<T> eulerAngles
+	(
+        detail::tquat<T> const & x
+    )
+	{
+		return detail::tvec3<T>(pitch(x), yaw(x), roll(x));
+	}
+
 	template <typename T>
 	GLM_FUNC_QUALIFIER detail::tquat<T> shortMix
 	(
